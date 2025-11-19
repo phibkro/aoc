@@ -1,6 +1,6 @@
 import { describe, expect, it } from "@effect/vitest"
 import { Equal } from "effect";
-import { transform } from "./part-one.js"
+import { transform, reduce } from "./part-one.js"
 
 describe("Part one", () => {
   const sample = `
@@ -20,4 +20,10 @@ describe("Part one", () => {
       [[3, 4], [4, 3], [2, 5], [1, 3], [3, 9], [3, 3]]
     ));
   });
+
+  it("should reduce", () => {
+    expect(
+      reduce(transform(sample)) === answer,
+    )
+  })
 })

@@ -31,6 +31,12 @@ export function transform(txt: string) {
   );
 };
 
+export function reduce(lines: Array<Array<number>>) {
+  const tuples = lines.flatMap((line) => Math.abs(line[0] - line[1]));
+  const sum = tuples.reduce((acc, curr) => acc + curr);
+  return sum;
+}
+
 const program = Effect.gen(function* () {
   const fs = yield* FileSystem.FileSystem;
   const path = yield* Path.Path;
@@ -41,7 +47,10 @@ const program = Effect.gen(function* () {
     "utf-8"
   );
 
-  console.log(transform(txt));
+  return pipe(
+    transform(txt),
+    reduce,
+  )
 });
 
 if (import.meta.main) {
