@@ -1,47 +1,48 @@
 {
-  "name": "@phibkro/aoc",
-  "version": "0.0.0",
-  "type": "module",
-  "packageManager": "pnpm@10.14.0",
-  "license": "MIT",
-  "description": "Advent of code",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/phibkro/aoc"
-  },
-  "publishConfig": {
-    "access": "public",
-    "directory": "dist"
-  },
-  "scripts": {
-    "build": "tsup && pnpm copy-package-json",
-    "build:ts": "tsup",
-    "clean": "rimraf dist/*",
-    "check": "tsc -b tsconfig.json",
-    "test": "vitest run",
-    "coverage": "vitest run --coverage",
-    "copy-package-json": "tsx scripts/copy-package-json.ts",
-    "changeset-version": "changeset version && node scripts/version.mjs",
-    "changeset-publish": "pnpm build && TEST_DIST= pnpm vitest && changeset publish"
-  },
-  "devDependencies": {
-    "@changesets/changelog-github": "^0.5.0",
-    "@changesets/cli": "^2.27.8",
-    "@effect/cli": "^0.69.0",
-    "@effect/language-service": "latest",
-    "@effect/platform": "^0.90.3",
-    "@effect/platform-node": "^0.96.0",
-    "@effect/vitest": "^0.25.1",
-    "@types/node": "^22.5.2",
-    "effect": "^3.17.7",
-    "tsup": "^8.2.4",
-    "tsx": "^4.19.1",
-    "typescript": "^5.6.2",
-    "vitest": "^3.2.0"
-  },
-  "pnpm": {
-    "patchedDependencies": {
-      "@changesets/get-github-info@0.6.0": "patches/@changesets__get-github-info@0.6.0.patch"
-    }
-  }
+	"name": "@phibkro/aoc",
+	"version": "0.0.0",
+	"type": "module",
+	"packageManager": "pnpm@10.14.0",
+	"license": "MIT",
+	"description": "Advent of code",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/phibkro/aoc"
+	},
+	"publishConfig": {
+		"access": "public",
+		"directory": "dist"
+	},
+	"scripts": {
+		"build": "tsup && pnpm copy-package-json",
+		"build:ts": "tsup",
+		"clean": "rimraf dist/*",
+		"check": "tsc -b tsconfig.json",
+		"test": "vitest run",
+		"coverage": "vitest run --coverage",
+		"copy-package-json": "tsx scripts/copy-package-json.ts",
+		"changeset-version": "changeset version && node scripts/version.mjs",
+		"changeset-publish": "pnpm build && TEST_DIST= pnpm vitest && changeset publish"
+	},
+	"devDependencies": {
+		"@changesets/changelog-github": "^0.5.1",
+		"@changesets/cli": "^2.29.7",
+		"@effect/cli": "^0.72.1",
+		"@effect/language-service": "latest",
+		"@effect/platform": "^0.93.3",
+		"@effect/platform-bun": "^0.83.0",
+		"@effect/platform-node": "^0.100.0",
+		"@effect/vitest": "^0.25.1",
+		"@types/node": "^22.19.1",
+		"effect": "^3.19.4",
+		"tsup": "^8.5.1",
+		"tsx": "^4.20.6",
+		"typescript": "^5.9.3",
+		"vitest": "^3.2.4"
+	},
+	"pnpm": {
+		"patchedDependencies": {
+			"@changesets/get-github-info@0.6.0": "patches/@changesets__get-github-info@0.6.0.patch"
+		}
+	}
 }
