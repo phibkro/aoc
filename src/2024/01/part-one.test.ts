@@ -1,5 +1,5 @@
 import { describe, expect, it } from "@effect/vitest"
-import { Equal } from "effect";
+import { Effect, Equal, pipe } from "effect";
 import { transform, reduce } from "./part-one.js"
 
 describe("Part one", () => {
@@ -23,7 +23,13 @@ describe("Part one", () => {
 
   it("should reduce", () => {
     expect(
-      reduce(transform(sample)) === answer,
+      Equal.equals(
+        pipe(
+          transform(sample),
+          Effect.andThen(reduce)
+        ),
+        answer
+      )
     )
   })
 })
